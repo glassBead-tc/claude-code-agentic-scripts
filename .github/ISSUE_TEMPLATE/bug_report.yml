@@ -1,0 +1,108 @@
+name: 🐛 Bug Report
+description: Report a bug in the elite agentic scripts
+title: "[BUG] "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug! Please fill out this form as completely as possible.
+
+  - type: dropdown
+    id: script-category
+    attributes:
+      label: Script Category
+      description: Which category of script is affected?
+      options:
+        - Evolution (ADAS, Meta-Learner, Evolution Engine, Fitness Evaluator)
+        - Dev Tools (Intelligent Debugger, Code Review, Test Generator)
+        - Optimization (Continuous Optimizer)
+        - Memory (Memory Manager, Memory-Powered Workflow)
+        - Multiple Categories
+        - Unknown
+    validations:
+      required: true
+
+  - type: dropdown
+    id: specific-script
+    attributes:
+      label: Specific Script
+      description: Which specific script has the issue?
+      options:
+        - ADAS Meta Agent
+        - Intelligent Debugger
+        - Meta-Learner
+        - Advanced Code Review
+        - Continuous Optimizer
+        - Evolution Engine
+        - Advanced Test Generator
+        - Memory Manager
+        - Memory-Powered Workflow
+        - Fitness Evaluator
+        - Multiple Scripts
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: A clear and concise description of what the bug is
+      placeholder: Describe the issue you encountered...
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: Steps to reproduce the behavior
+      placeholder: |
+        1. Run command '...'
+        2. See error
+      value: |
+        1. 
+        2. 
+        3. 
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What you expected to happen
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Error Logs
+      description: If applicable, add error logs or output
+      render: shell
+
+  - type: input
+    id: claude-version
+    attributes:
+      label: Claude Code CLI Version
+      description: Output of `claude --version`
+      placeholder: "1.0.25 (Claude Code)"
+    validations:
+      required: true
+
+  - type: input
+    id: os
+    attributes:
+      label: Operating System
+      description: Which OS are you using?
+      placeholder: "macOS 14.0, Ubuntu 22.04, etc."
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add any other context about the problem here
