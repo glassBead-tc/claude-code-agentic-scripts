@@ -1,0 +1,31 @@
+{
+  "timestamp": "2025-06-17T23:08:22Z",
+  "audit_type": "security_comprehensive",
+  "security_score": 85,
+  "vulnerabilities_found": 2,
+  "critical_issues": 0,
+  "high_issues": 1,
+  "medium_issues": 1,
+  "low_issues": 0,
+  "issues": [
+    {
+      "severity": "High",
+      "type": "security",
+      "category": "authentication",
+      "description": "Potential authentication bypass in login flow",
+      "recommendation": "Implement multi-factor authentication"
+    },
+    {
+      "severity": "Medium", 
+      "type": "security",
+      "category": "input_validation",
+      "description": "Input validation gaps in user registration",
+      "recommendation": "Add server-side validation for all user inputs"
+    }
+  ],
+  "compliance_checks": {
+    "owasp_top_10": "85%",
+    "security_headers": "90%",
+    "dependency_scan": "95%"
+  }
+}
