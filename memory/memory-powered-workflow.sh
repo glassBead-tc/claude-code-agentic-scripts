@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Collective Intelligence Integration
+source "$(dirname "${BASH_SOURCE[0]}")/collective-intelligence/integrate.sh"
+
+
 # Memory-Powered Workflow - Demonstrates advanced memory usage
 # Usage: ./memory-powered-workflow.sh [task]
 
