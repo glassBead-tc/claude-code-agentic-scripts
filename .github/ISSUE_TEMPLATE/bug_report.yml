@@ -1,5 +1,5 @@
 name: 🐛 Bug Report
-description: Report a bug in the elite agentic scripts
+description: Report a bug in the agentic scripts
 title: "[BUG] "
 labels: ["bug", "needs-triage"]
 body:

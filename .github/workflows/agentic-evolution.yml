@@ -318,10 +318,10 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
-          # Benchmark all elite scripts
+          # Benchmark all scripts
           chmod +x evolution/fitness-evaluator.sh
           
-          echo "📊 Benchmarking Elite Agentic Scripts..."
+          echo "📊 Benchmarking Agentic Scripts..."
           
           # Create benchmark report
           ./evolution/fitness-evaluator.sh \
@@ -429,4 +429,4 @@ jobs:
           echo "✅ Memory management systems operational" >> $GITHUB_STEP_SUMMARY
           
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "🚀 **All elite agentic scripts are functional and ready for deployment!**" >> $GITHUB_STEP_SUMMARY
+          echo "🚀 **All agentic scripts are functional and ready for deployment.**" >> $GITHUB_STEP_SUMMARY
