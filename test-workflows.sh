@@ -219,7 +219,7 @@ echo -e "📊 Total Tests: $((TESTS_PASSED + TESTS_FAILED))"
 
 if [ $TESTS_FAILED -eq 0 ]; then
     echo -e "\n${GREEN}🎉 ALL TESTS PASSED! Ready for GitHub publication!${NC}"
-    echo -e "${GREEN}🚀 The elite agentic scripts collection is ready to deploy!${NC}"
+    echo -e "${GREEN}🚀 The agentic scripts collection is ready to deploy.${NC}"
     exit 0
 else
     echo -e "\n${RED}⚠️  SOME TESTS FAILED. Please review and fix the following:${NC}"

@@ -102,7 +102,7 @@ jobs:
           cat > analysis_prompt.txt << 'EOF'
           You are an AI innovation analyst specializing in agentic systems and automation tools.
           
-          Analyze the following GitHub repositories and identify the most innovative and potentially useful concepts, patterns, or implementations that could inspire improvements to our elite agentic scripts collection.
+          Analyze the following GitHub repositories and identify the most innovative and potentially useful concepts, patterns, or implementations that could inspire improvements to our agentic scripts collection.
           
           Focus on:
           1. Novel approaches to AI agent design
@@ -174,7 +174,7 @@ jobs:
           
           ## 🚀 Implementation Recommendations
           
-          Based on this analysis, the following enhancements are recommended for our elite agentic scripts:
+          Based on this analysis, the following enhancements are recommended for our agentic scripts:
           
           1. **Evolution System Improvements** - Apply discovered patterns to enhance ADAS
           2. **New Script Categories** - Develop scripts for identified gaps
