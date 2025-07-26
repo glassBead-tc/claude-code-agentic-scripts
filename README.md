@@ -119,6 +119,9 @@ These scripts implement concepts from cutting-edge AI research:
 
 ## 📚 Documentation
 
+## 🌐 MCP Server
+A minimal TypeScript server in `mcp-server/` exposes the ADAS Meta Agent via a REST API. Run it with `npm start` in that folder and POST to `/design-agent` with a domain and iteration count. The server stores results in memory so you can fetch them again via `GET /design-agent/{sessionId}`.
+
 Each script includes:
 - Detailed README with usage examples
 - Configuration options and parameters
