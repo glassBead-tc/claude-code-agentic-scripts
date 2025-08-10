@@ -1,0 +1,31 @@
+{
+  "script_name": "fitness-evaluator.sh",
+  "category": "evolution",
+  "patterns": [
+    {
+      "type": "structure",
+      "name": "bash_error_handling",
+      "description": "Uses set -e and error checking",
+      "code_snippet": "set -e",
+      "reusability_score": 9,
+      "innovation_score": 3,
+      "effectiveness_score": 8,
+      "applicable_to": ["all"],
+      "implementation_notes": "Add to script header"
+    },
+    {
+      "type": "output",
+      "name": "colored_output",
+      "description": "Uses ANSI color codes for better UX",
+      "code_snippet": "GREEN='\\033[0;32m'",
+      "reusability_score": 8,
+      "innovation_score": 4,
+      "effectiveness_score": 7,
+      "applicable_to": ["all"],
+      "implementation_notes": "Define color variables at top"
+    }
+  ],
+  "overall_quality": 7,
+  "unique_innovations": ["domain-specific optimization"],
+  "improvement_suggestions": ["add more error recovery", "improve documentation"]
+}

@@ -3,6 +3,12 @@ import { execFile } from 'child_process';
 import { promises as fs } from 'fs';
 import path from 'path';
 import crypto from 'crypto';
+import { fileURLToPath } from 'url';
+import { processSequentialThoughts, type ThoughtData } from './core/sequential-thinking.js';
+import { LocalScriptRunner } from './interfaces/script-runner.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 app.use(express.json());
@@ -49,13 +55,13 @@ async function getLatestResult() {
 
 // Launch ADAS meta agent and store result under a session id
 app.post('/design-agent', async (req, res) => {
-  const { domain, iterations, sessionId } = req.body;
+  const { domain, iterations, sessionId } = req.body ?? {};
   if (!domain || !iterations) {
     return res.status(400).json({ error: 'domain and iterations required' });
   }
   const id = typeof sessionId === 'string' ? sessionId : crypto.randomUUID();
   try {
-    await runAdas(domain, Number(iterations));
+    await runAdas(String(domain), Number(iterations));
     const result = await getLatestResult();
     sessionStore.set(id, result);
     res.json({ sessionId: id, ...result });
@@ -72,6 +78,35 @@ app.get('/design-agent/:id', (req, res) => {
     return res.status(404).json({ error: 'session id not found' });
   }
   res.json({ sessionId: id, ...result });
+});
+
+// Process sequential thoughts
+app.post('/sequential-thoughts', (req, res) => {
+  try {
+    const thoughts = (req.body?.thoughts ?? []) as ThoughtData[];
+    const result = processSequentialThoughts(thoughts);
+    res.json(result);
+  } catch (err: any) {
+    res.status(400).json({ error: err.message });
+  }
+});
+
+// Safely run a script in allowed directories
+const runner = new LocalScriptRunner(ROOT_DIR);
+app.post('/run-script', async (req, res) => {
+  try {
+    const { mode, scriptPath, params } = req.body ?? {};
+    if (typeof scriptPath !== 'string' || typeof mode !== 'string') {
+      return res.status(400).json({ error: 'mode and scriptPath are required' });
+    }
+    let output: string;
+    if (mode === 'scout') output = await runner.executeScout(scriptPath, params ?? {});
+    else if (mode === 'adas') output = await runner.executeADAS(scriptPath, params ?? {});
+    else output = await runner.executeHybrid(scriptPath, params ?? {});
+    res.json({ output });
+  } catch (err: any) {
+    res.status(400).json({ error: err.message });
+  }
 });
 
 const port = process.env.PORT || 3000;
