@@ -6,6 +6,8 @@ import crypto from 'crypto';
 import { fileURLToPath } from 'url';
 import { processSequentialThoughts, type ThoughtData } from './core/sequential-thinking.js';
 import { LocalScriptRunner } from './interfaces/script-runner.js';
+import { HybridController } from './evolution/hybrid-controller.js';
+import type { EvolutionThoughtData } from './evolution/hybrid-evolution-server.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -104,6 +106,18 @@ app.post('/run-script', async (req, res) => {
     else if (mode === 'adas') output = await runner.executeADAS(scriptPath, params ?? {});
     else output = await runner.executeHybrid(scriptPath, params ?? {});
     res.json({ output });
+  } catch (err: any) {
+    res.status(400).json({ error: err.message });
+  }
+});
+
+// Evolve with hybrid controller
+app.post('/evolve', async (req, res) => {
+  try {
+    const thoughts = (req.body?.thoughts ?? []) as EvolutionThoughtData[];
+    const controller = new HybridController(runner, ROOT_DIR);
+    const result = await controller.run(thoughts);
+    res.json(result);
   } catch (err: any) {
     res.status(400).json({ error: err.message });
   }

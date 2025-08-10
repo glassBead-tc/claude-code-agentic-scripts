@@ -1,0 +1,17 @@
+{
+  "discovery_timestamp": "\"2025-08-10T09:15:24Z\"",
+  "discovery_mode": "systematic",
+  "combinations": [
+    {
+      "combination_id": "combo_1",
+      "scripts": [
+        "adas-meta-agent.sh",
+        "continuous-reflection-engine.sh"
+      ],
+      "compatibility_score": 0.62,
+      "discovery_method": "systematic",
+      "status": "discovered"
+    }
+  ],
+  "combination_strategies": {}
+}
