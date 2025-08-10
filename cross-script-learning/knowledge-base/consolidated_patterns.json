@@ -1,0 +1,24 @@
+{
+  "consolidation_timestamp": "\"2025-08-10T09:16:04Z\"",
+  "pattern_frequencies": {
+    "structure": 16,
+    "output": 16
+  },
+  "cross_category_patterns": {},
+  "high_value_patterns": [
+    {
+      "pattern_type": "structure",
+      "frequency": 16,
+      "value_score": 32,
+      "priority": "high"
+    },
+    {
+      "pattern_type": "output",
+      "frequency": 16,
+      "value_score": 32,
+      "priority": "high"
+    }
+  ],
+  "innovation_clusters": {},
+  "learning_opportunities": []
+}

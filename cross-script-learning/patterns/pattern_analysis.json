@@ -1,0 +1,74 @@
+{
+  "analysis_timestamp": "\"2025-08-10T09:16:04Z\"",
+  "scripts_analyzed": [
+    {
+      "name": "adas-meta-agent.sh",
+      "category": "evolution"
+    },
+    {
+      "name": "continuous-reflection-engine.sh",
+      "category": "evolution"
+    },
+    {
+      "name": "cross-script-learning-network.sh",
+      "category": "evolution"
+    },
+    {
+      "name": "emergent-capability-discovery.sh",
+      "category": "evolution"
+    },
+    {
+      "name": "evolution-engine.sh",
+      "category": "evolution"
+    },
+    {
+      "name": "fitness-evaluator.sh",
+      "category": "evolution"
+    },
+    {
+      "name": "meta-learner.sh",
+      "category": "evolution"
+    },
+    {
+      "name": "meta-meta-evolution-engine.sh",
+      "category": "evolution"
+    },
+    {
+      "name": "supabase-edge-integration.sh",
+      "category": "evolution"
+    },
+    {
+      "name": "code-review-advanced.sh",
+      "category": "dev-tools"
+    },
+    {
+      "name": "intelligent-debugger.sh",
+      "category": "dev-tools"
+    },
+    {
+      "name": "test-generator-advanced.sh",
+      "category": "dev-tools"
+    },
+    {
+      "name": "continuous-optimizer.sh",
+      "category": "optimization"
+    },
+    {
+      "name": "performance-driven-auto-tuning.sh",
+      "category": "optimization"
+    },
+    {
+      "name": "memory-manager.sh",
+      "category": "memory"
+    },
+    {
+      "name": "memory-powered-workflow.sh",
+      "category": "memory"
+    }
+  ],
+  "common_patterns": {},
+  "successful_techniques": {},
+  "error_handling_patterns": {},
+  "optimization_patterns": {},
+  "claude_integration_patterns": {}
+}
